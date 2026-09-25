@@ -11,7 +11,7 @@
 我的[大三上專題 `untouchable11-sat`](https://github.com/Michaelwu128/untouchable11-sat)
 將 Untouchable 11 形式化為 SAT/CNF，比較 placement-only、cell-variable channeling
 與 Sequential Counter 等 Model A / B / C encoding。這個大三下專題沿用 SAT-based
-puzzle solving 的基礎，研究焦點則從「如何縮小 encoding」轉向「如何用幾何與學習式方法提早剪除無效搜尋分支」。
+puzzle solving 的基礎，研究焦點則從「如何縮小 encoding」轉向「如何用幾何與學習式方法提早排除不可能的 placement combinations」。
 
 ## Highlights
 
@@ -52,7 +52,7 @@ geometric dead-pocket checker `has_dead_pocket`，確認確實會留下無法容
 |---|---|---|
 | [v2 geometric pruning](EXPERIMENT_RESULTS.md) | D4-blocked 5 解平均 Kissat：baseline **12.778 s** → shape″ **6.674 s**；但 shape″ `build_cnf` 為 **3359.8 s（約 56 分鐘）** | pruning 可縮短 SAT solving time，但 preprocessing cost 很高 |
 | [v4 learned hold-out](baselines/learned_shape/REPORT.md) | learned **21.4 s**、baseline **47.0 s**、full shape **24.1 s**（D4 + 10 seeds） | learning-guided pruning 在這個 hold-out workload 有效，但不是所有拼圖都如此 |
-| [v6 連續枚舉 100 解](baselines/v6/break_even/RESULTS.md) | 含一次 CNF build：shape **3749 s**、learned **3920 s**、baseline **4330 s** | 長枚舉時 geometric shape 最佳，沒有單一方法全面勝出 |
+| [v6 連續枚舉 100 解](baselines/v6/break_even/RESULTS.md) | 含一次 CNF build：shape **3749 s**、learned **3920 s**、baseline **4330 s** | 此 100 解枚舉設定下，geometric shape 的累積總時間最低 |
 
 ![v6 三方法累積時間](baselines/v6/break_even/cumulative_time.svg)
 
