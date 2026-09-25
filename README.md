@@ -16,9 +16,9 @@ puzzle solving 的基礎，研究焦點則從「如何縮小 encoding」轉向�
 ## Highlights
 
 - **SAT-based puzzle solving**：將 11 塊六格拼圖的合法放置、no-touch 與對稱限制編碼為 CNF，交由 Kissat 求解。
-- **Geometric dead-pocket pruning**：以 deterministic geometric checker 找出無法容納剩餘拼圖塊的小空腔，加入合法的 pruning clauses。
+- **Geometric dead-pocket pruning**：以 deterministic geometric checker 找出無法容納剩餘拼圖塊的小空腔，加入通過 checker 驗證的 pruning clauses。
 - **Learning-guided ranking**：以便宜的幾何預篩與 LightGBM LambdaRank 排序候選；ML 不直接決定 SAT constraint。
-- **End-to-end evaluation**：同時量測 CNF preprocessing 與求解／多解枚舉，結果顯示 formal 與 learned 方法各有適用情境，沒有單一方法全面勝出。
+- **End-to-end evaluation**：同時量測 CNF preprocessing 與求解／多解枚舉，結果顯示 geometric pruning 與 learned 方法各有適用情境，沒有單一方法全面勝出。
 
 ## 問題與動機
 
@@ -40,7 +40,7 @@ geometric dead-pocket checker `has_dead_pocket`，確認確實會留下無法容
 才會加入 `¬pi ∨ ¬pj`。
 
 - ML false positive 會被 checker 擋下，不會直接變成 pruning clause。
-- ML false negative 只會漏掉一次剪枝機會，不會自行排除 SAT 解。
+- ML false negative 只會漏掉可能的剪枝機會，不會因 ML 本身加入錯誤 constraint。
 - 這是 soundness-preserving design，但正確性仍依賴 `has_dead_pocket`
   對幾何條件的實作是否正確；本專案不是 proof-assistant 或 machine-checked proof。
 
@@ -50,9 +50,9 @@ geometric dead-pocket checker `has_dead_pocket`，確認確實會留下無法容
 
 | 實驗 | 結果 | 研究意義 |
 |---|---|---|
-| [v2 formal pruning](EXPERIMENT_RESULTS.md) | D4-blocked 5 解平均 Kissat：baseline **12.778 s** → shape″ **6.674 s**；但 shape″ `build_cnf` 為 **3359.8 s（約 56 分鐘）** | formal pruning 可縮短求解，但 preprocessing trade-off 很大 |
+| [v2 geometric pruning](EXPERIMENT_RESULTS.md) | D4-blocked 5 解平均 Kissat：baseline **12.778 s** → shape″ **6.674 s**；但 shape″ `build_cnf` 為 **3359.8 s（約 56 分鐘）** | pruning 可縮短 SAT solving time，但 preprocessing cost 很高 |
 | [v4 learned hold-out](baselines/learned_shape/REPORT.md) | learned **21.4 s**、baseline **47.0 s**、full shape **24.1 s**（D4 + 10 seeds） | learning-guided pruning 在這個 hold-out workload 有效，但不是所有拼圖都如此 |
-| [v6 連續枚舉 100 解](baselines/v6/break_even/RESULTS.md) | 含一次 CNF build：shape **3749 s**、learned **3920 s**、baseline **4330 s** | 長枚舉時 formal shape 最佳，沒有單一方法全面勝出 |
+| [v6 連續枚舉 100 解](baselines/v6/break_even/RESULTS.md) | 含一次 CNF build：shape **3749 s**、learned **3920 s**、baseline **4330 s** | 長枚舉時 geometric shape 最佳，沒有單一方法全面勝出 |
 
 ![v6 三方法累積時間](baselines/v6/break_even/cumulative_time.svg)
 
@@ -64,17 +64,17 @@ shape″ 沿用 2026-06-03 的五次結果；此限制已記錄在來源文件�
 ```mermaid
 flowchart LR
   placements["合法 placements"] --> baseline["Baseline CNF"]
-  placements --> formal["Geometric pruning"]
+  placements --> geometric["Geometric pruning"]
   placements --> prefilter["Cheap geometric pre-filter"]
   prefilter --> ranker["ML candidate ranking"]
   ranker --> checker["Deterministic dead-pocket checker"]
   checker --> verified["Verified pruning clauses"]
   baseline --> kissat["Kissat"]
-  formal --> kissat
+  geometric --> kissat
   verified --> kissat
 ```
 
-- **Formal shape variants**：直接檢查一至三個 placements 是否形成小於六格的 4-連通空腔。
+- **Geometric shape variants**：直接檢查一至三個 placements 是否形成小於六格的 4-連通空腔。
 - **Learned path**：使用 78 維 puzzle-invariant 特徵排序 placement pairs，
   再由同一 geometric checker 確認。
 - **共同 baseline**：所有主要比較沿用 placement-variable encoding，讓差異集中在 pruning；
@@ -109,7 +109,7 @@ ML 模型檔屬大型生成物，不直接納入 Git；可依
 
 | 你想知道… | 先讀這份 |
 |-----------|----------|
-| 整體方法、v1/v2 formal 實驗、公平枚舉 | [`EXPERIMENT_RESULTS.md`](EXPERIMENT_RESULTS.md) |
+| 整體方法、v1/v2 geometric pruning 實驗、公平枚舉 | [`EXPERIMENT_RESULTS.md`](EXPERIMENT_RESULTS.md) |
 | ML、L0、hold-out 與整體結論 | [`baselines/learned_shape/REPORT.md`](baselines/learned_shape/REPORT.md) |
 | 資料、訓練、參數、seeds 與重現步驟 | [`baselines/learned_shape/EXPERIMENTS_DETAILED.md`](baselines/learned_shape/EXPERIMENTS_DETAILED.md) |
 | v6 連續枚舉與 break-even | [`baselines/v6/break_even/RESULTS.md`](baselines/v6/break_even/RESULTS.md) |
@@ -121,7 +121,7 @@ ML 模型檔屬大型生成物，不直接納入 Git；可依
 ```
 new_puzzle_2026/
 ├── README.md                 ← 本文件
-├── EXPERIMENT_RESULTS.md     ← Formal 實驗總整理
+├── EXPERIMENT_RESULTS.md     ← Geometric pruning 實驗總整理
 ├── encoding/                 ← CNF 生成、剪枝、benchmark 腳本
 │   ├── generate_cnf.py
 │   ├── learned_shape.py
@@ -141,7 +141,7 @@ new_puzzle_2026/
 ## 可重現性與限制
 
 - benchmark configuration、solver settings、seeds 與命令保留在上述詳細文件；跨表格結果若協議不同，不做直接排名。
-- learned 方法的效果依 hold-out puzzle 與 oracle budget 而變；目前結果不足以宣稱全面優於 baseline 或 formal pruning。
+- learned 方法的效果依 hold-out puzzle 與 oracle budget 而變；目前結果不足以宣稱全面優於 baseline 或 exhaustive geometric pruning。
 - `generate_cnf.py` 的 baseline 直接對衝突 placements 產生二元子句，且未去除重複子句。這讓 pruning
   實驗共用同一基準，但不是最精簡的 encoding。
 - 前作的 Model C 使用 cell variables、channeling 與 Sequential Counter。未來工作是將它移植到相同
