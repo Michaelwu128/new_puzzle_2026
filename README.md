@@ -41,7 +41,7 @@ geometric dead-pocket checker `has_dead_pocket`，確認確實會留下無法容
 
 - ML false positive 會被 checker 擋下，不會直接變成 pruning clause。
 - ML false negative 只會漏掉可能的剪枝機會，不會因 ML 本身加入錯誤 constraint。
-- 這是 soundness-preserving design，但正確性仍依賴 `has_dead_pocket`
+- 這個 pipeline 的設計目標是維持 soundness，但正確性仍依賴 `has_dead_pocket`
   對幾何條件的實作是否正確；本專案不是 proof-assistant 或 machine-checked proof。
 
 ## 主要結果
@@ -75,7 +75,7 @@ flowchart LR
 ```
 
 - **Geometric shape variants**：直接檢查一至三個 placements 是否形成小於六格的 4-連通空腔。
-- **Learned path**：使用 78 維 puzzle-invariant 特徵排序 placement pairs，
+- **Learned path**：目前的 LightGBM ranker 使用 78 維 puzzle-invariant 特徵排序 placement pairs，
   再由同一 geometric checker 確認。
 - **共同 baseline**：所有主要比較沿用 placement-variable encoding，讓差異集中在 pruning；
   它不是最精簡的 CNF encoding。
