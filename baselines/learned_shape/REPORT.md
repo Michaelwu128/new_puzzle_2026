@@ -211,7 +211,7 @@ python3 run_learned_shape_benchmark.py --phase sat --puzzle v1 --top-k 100
 export LEARNED_SHAPE_MODEL=../baselines/learned_shape/model_splitB.joblib
 export LEARNED_SHAPE_TOP_K=50
 export LEARNED_SHAPE_FULL_PAIRS=0
-python3 generate_cnf.py --puzzle v2 --method learned_shape
+python3 generate_cnf.py --puzzle v2 --method learned_shape --out cnf/v2/learned_shape.cnf
 ```
 
 ---
