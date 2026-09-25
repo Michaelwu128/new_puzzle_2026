@@ -109,7 +109,7 @@ pip install -r requirements.txt
 export KISSAT=/path/to/kissat
 
 cd encoding
-python3 generate_cnf.py --puzzle v2 --method shape
+python3 generate_cnf.py --puzzle v2 --method shape --out cnf/v2/shape.cnf
 python3 run_enum_benchmark.py --puzzle v2 --count 5 --methods baseline shape
 ```
 
@@ -201,7 +201,7 @@ new_puzzle_2026/
 
 | 任務 | 腳本 |
 |------|------|
-| 產生 CNF | `encoding/generate_cnf.py --puzzle v2 --method shape` |
+| 產生 CNF | `encoding/generate_cnf.py --puzzle v2 --method shape --out encoding/cnf/v2/shape.cnf` |
 | 公平枚舉 N 解 | `encoding/run_enum_benchmark.py --puzzle v6 --count 5` |
 | D4 + 10 seed 下一解 | `encoding/run_d4_next_sol_seeds.py` |
 | Learned sweep / SAT | `encoding/run_learned_shape_benchmark.py` |
