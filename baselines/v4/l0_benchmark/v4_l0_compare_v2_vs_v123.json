@@ -1,0 +1,31 @@
+{
+  "shape_cnf_build_sec": 2436.759,
+  "baseline_sat_mean_sec": 46.967,
+  "shape_sat_mean_sec": 24.112,
+  "v2_only": {
+    "model": "baselines/learned_shape/ranker_loo_v2_train.joblib",
+    "learned_tag": "learned_l0_k25",
+    "cnf_build_sec": 1808.518,
+    "clauses_base": 55480448,
+    "extra_dead_clauses": 604265,
+    "sat_mean_sec": 21.402,
+    "vs_baseline": 2.195,
+    "vs_shape_sat": 1.127,
+    "vs_shape_preprocess": 1.347
+  },
+  "v123": {
+    "model": "../baselines/learned_shape/ranker_train_v1_v2_v3.joblib",
+    "learned_tag": "learned_l0_k25_v123",
+    "cnf_build_sec": 999.186,
+    "clauses_base": 55442354,
+    "extra_dead_clauses": 566171,
+    "sat_mean_sec": 28.107,
+    "vs_baseline": null,
+    "vs_shape_sat": 0.858,
+    "vs_shape_preprocess": 2.439
+  },
+  "sweep_v4_at_25pct_recall": {
+    "v2_only": 0.47,
+    "v123": 0.421
+  }
+}

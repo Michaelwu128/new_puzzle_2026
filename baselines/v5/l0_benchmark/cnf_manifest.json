@@ -1,0 +1,49 @@
+{
+  "baseline": {
+    "tag": "baseline",
+    "build_method": "baseline",
+    "placements": 7232,
+    "vars": 14453,
+    "clauses_base": 60727023,
+    "clauses_d4": 60727023,
+    "cnf_build_sec": 40.41,
+    "cnf_write_base_sec": 113.73,
+    "cnf_write_d4_sec": 0.0,
+    "cnf_total_sec": 156.197,
+    "env": {},
+    "reused": false
+  },
+  "shape": {
+    "tag": "shape",
+    "build_method": "shape",
+    "placements": 7232,
+    "vars": 14453,
+    "clauses_base": 62267303,
+    "clauses_d4": 62267303,
+    "cnf_build_sec": 2408.684,
+    "cnf_write_base_sec": 177.334,
+    "cnf_write_d4_sec": 0.0,
+    "cnf_total_sec": 2586.971,
+    "env": {},
+    "reused": false
+  },
+  "learned_l0_k25_v123": {
+    "tag": "learned_l0_k25_v123",
+    "build_method": "learned_shape",
+    "placements": 7232,
+    "vars": 14453,
+    "clauses_base": 61253998,
+    "clauses_d4": 61253998,
+    "cnf_build_sec": 1849.634,
+    "cnf_write_base_sec": 177.899,
+    "cnf_write_d4_sec": 0.0,
+    "cnf_total_sec": 2028.045,
+    "env": {
+      "LEARNED_SHAPE_TOP_K": "25.0",
+      "LEARNED_SHAPE_CASCADE_L0": "0.4",
+      "DEAD_POCKET_FEATURES": "v2",
+      "LEARNED_SHAPE_MODEL": "../baselines/learned_shape/ranker_train_v1_v2_v3.joblib"
+    },
+    "reused": false
+  }
+}

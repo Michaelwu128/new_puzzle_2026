@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# 大型實驗產物（勿 commit）
+*.cnf
+*.joblib
+*.csv
+*.log
+baselines/learned_shape/full_dead_v*.json
+baselines/**/*_meta.json
+baselines/v6/break_even/*_sol_*.txt
+
+# 本機互動式編輯器備份（公開版改用 docs/images 靜態圖）
+tools/puzzle-editor-backup/
+
+# 可選：若之後要 commit 小型 JSON，再從這裡移除
+# baselines/**/*.json

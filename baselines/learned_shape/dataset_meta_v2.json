@@ -1,0 +1,28 @@
+{
+  "puzzles": {
+    "v6": {
+      "puzzle": "v6",
+      "features_version": "v2",
+      "stratified": true,
+      "max_neg_samples": 400000,
+      "max_pos_samples": 2000000,
+      "neg_quotas": {
+        "random": 200000,
+        "near_edge": 100000,
+        "band_overlap": 100000
+      },
+      "edge_margin": 6,
+      "n_scanned": 454992,
+      "n_pos_seen": 54992,
+      "n_neg_seen": 400000,
+      "n_pos_kept": 54992,
+      "n_neg_kept": 400000,
+      "n_rows_written": 454992,
+      "positive_rate_scanned": 0.120864,
+      "positive_rate_written": 0.120864,
+      "build_sec": 131.315,
+      "output": "baselines/learned_shape/dataset_v6_v2.csv"
+    }
+  },
+  "features": "v2"
+}

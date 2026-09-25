@@ -1,0 +1,81 @@
+{
+  "puzzle": "v1",
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "methods": {
+    "baseline": {
+      "placements": 7464,
+      "vars": 14917,
+      "clauses": 65139812,
+      "per_seed": [
+        {
+          "seed": 1,
+          "status": "SATISFIABLE",
+          "sec": 17.418
+        },
+        {
+          "seed": 2,
+          "status": "SATISFIABLE",
+          "sec": 18.87
+        },
+        {
+          "seed": 3,
+          "status": "SATISFIABLE",
+          "sec": 37.336
+        },
+        {
+          "seed": 4,
+          "status": "SATISFIABLE",
+          "sec": 26.963
+        },
+        {
+          "seed": 5,
+          "status": "SATISFIABLE",
+          "sec": 22.296
+        }
+      ],
+      "mean_sec": 24.577,
+      "stdev_sec": 8.024
+    },
+    "shape": {
+      "placements": 7464,
+      "vars": 14917,
+      "clauses": 67021164,
+      "per_seed": [
+        {
+          "seed": 1,
+          "status": "SATISFIABLE",
+          "sec": 18.131
+        },
+        {
+          "seed": 2,
+          "status": "SATISFIABLE",
+          "sec": 22.323
+        },
+        {
+          "seed": 3,
+          "status": "SATISFIABLE",
+          "sec": 11.133
+        },
+        {
+          "seed": 4,
+          "status": "SATISFIABLE",
+          "sec": 21.988
+        },
+        {
+          "seed": 5,
+          "status": "SATISFIABLE",
+          "sec": 10.1
+        }
+      ],
+      "mean_sec": 16.735,
+      "stdev_sec": 5.835,
+      "vs_baseline": 1.469
+    }
+  }
+}

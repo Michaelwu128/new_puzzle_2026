@@ -1,0 +1,57 @@
+{
+  "puzzle": "v2",
+  "run_at": "2026-06-18T12:04:27.603002+08:00",
+  "finished_at": "2026-06-18T13:34:42.008413+08:00",
+  "order": [
+    "baseline",
+    "shape",
+    "shape_prime",
+    "shape_prime2"
+  ],
+  "learned_model": "",
+  "learned_top_k": 25.0,
+  "cascade_l0_frac": 0.4,
+  "methods": [
+    {
+      "method": "baseline",
+      "cnf_build_sec": 17.139,
+      "cnf_write_sec": 9.403,
+      "cnf_total_sec": 26.542,
+      "vars": 12229,
+      "clauses": 44201651,
+      "placements": 6120,
+      "cnf_path": "baselines/v2/cnf_build_fair/baseline_fair.cnf"
+    },
+    {
+      "method": "shape",
+      "cnf_build_sec": 943.629,
+      "cnf_write_sec": 9.719,
+      "cnf_total_sec": 953.347,
+      "vars": 12229,
+      "clauses": 45674811,
+      "placements": 6120,
+      "cnf_path": "baselines/v2/cnf_build_fair/shape_fair.cnf"
+    },
+    {
+      "method": "shape_prime",
+      "cnf_build_sec": 1042.342,
+      "cnf_write_sec": 13.841,
+      "cnf_total_sec": 1056.183,
+      "vars": 12229,
+      "clauses": 45674811,
+      "placements": 6120,
+      "cnf_path": "baselines/v2/cnf_build_fair/shape_prime_fair.cnf"
+    },
+    {
+      "method": "shape_prime2",
+      "cnf_build_sec": 3359.768,
+      "cnf_write_sec": 11.265,
+      "cnf_total_sec": 3371.033,
+      "vars": 11717,
+      "clauses": 48183085,
+      "placements": 5864,
+      "cnf_path": "baselines/v2/cnf_build_fair/shape_prime2_fair.cnf"
+    }
+  ],
+  "historical_note": "d4_next_sol_seeds (不同協議): baseline 13.3s, shape 717.8s, shape' 713.6s, shape'' 2339.2s."
+}

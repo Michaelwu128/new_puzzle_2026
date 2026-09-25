@@ -1,0 +1,90 @@
+{
+  "puzzle": "v4",
+  "train_puzzle": "v1",
+  "model": "baselines/learned_shape/ranker_loo_v1_train.joblib",
+  "features_version": "v2",
+  "n_full_dead_pairs": 1630496,
+  "full_dead_scan_sec": 0.0,
+  "full_shape_clauses": 1630496,
+  "full_shape_pairwise_sec": 0.0,
+  "sweep": [
+    {
+      "puzzle": "v4",
+      "top_k_percent": 1,
+      "n_clauses": 11279,
+      "n_oracle_calls": 141967,
+      "n_pairs_total": 14196664,
+      "oracle_call_fraction": 0.01,
+      "clause_recall_vs_full": 0.0069,
+      "oracle_sec": 13.132,
+      "total_sec": 169.676,
+      "full_shape_clauses": 1630496,
+      "clause_fraction_vs_full_shape": 0.0069
+    },
+    {
+      "puzzle": "v4",
+      "top_k_percent": 5,
+      "n_clauses": 147151,
+      "n_oracle_calls": 709834,
+      "n_pairs_total": 14196664,
+      "oracle_call_fraction": 0.05,
+      "clause_recall_vs_full": 0.0902,
+      "oracle_sec": 65.603,
+      "total_sec": 222.221,
+      "full_shape_clauses": 1630496,
+      "clause_fraction_vs_full_shape": 0.0902
+    },
+    {
+      "puzzle": "v4",
+      "top_k_percent": 10,
+      "n_clauses": 280895,
+      "n_oracle_calls": 1419667,
+      "n_pairs_total": 14196664,
+      "oracle_call_fraction": 0.1,
+      "clause_recall_vs_full": 0.1723,
+      "oracle_sec": 132.179,
+      "total_sec": 288.892,
+      "full_shape_clauses": 1630496,
+      "clause_fraction_vs_full_shape": 0.1723
+    },
+    {
+      "puzzle": "v4",
+      "top_k_percent": 25,
+      "n_clauses": 645970,
+      "n_oracle_calls": 3549166,
+      "n_pairs_total": 14196664,
+      "oracle_call_fraction": 0.25,
+      "clause_recall_vs_full": 0.3962,
+      "oracle_sec": 341.011,
+      "total_sec": 497.929,
+      "full_shape_clauses": 1630496,
+      "clause_fraction_vs_full_shape": 0.3962
+    },
+    {
+      "puzzle": "v4",
+      "top_k_percent": 50,
+      "n_clauses": 1038070,
+      "n_oracle_calls": 7098332,
+      "n_pairs_total": 14196664,
+      "oracle_call_fraction": 0.5,
+      "clause_recall_vs_full": 0.6367,
+      "oracle_sec": 665.376,
+      "total_sec": 822.569,
+      "full_shape_clauses": 1630496,
+      "clause_fraction_vs_full_shape": 0.6367
+    },
+    {
+      "puzzle": "v4",
+      "top_k_percent": 100,
+      "n_clauses": 1630496,
+      "n_oracle_calls": 14196664,
+      "n_pairs_total": 14196664,
+      "oracle_call_fraction": 1.0,
+      "clause_recall_vs_full": 1.0,
+      "oracle_sec": 1364.733,
+      "total_sec": 1522.586,
+      "full_shape_clauses": 1630496,
+      "clause_fraction_vs_full_shape": 1.0
+    }
+  ]
+}

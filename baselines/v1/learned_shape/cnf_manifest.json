@@ -1,0 +1,38 @@
+{
+  "learned_shape_k100": {
+    "placements": 7464,
+    "vars": 14917,
+    "clauses_base": 67021163,
+    "clauses_d4": 67021171,
+    "cnf_build_sec": 1867.151,
+    "top_k_percent": 100.0,
+    "method_tag": "learned_shape_k100"
+  },
+  "ranker_v2_k25": {
+    "placements": 7464,
+    "vars": 14917,
+    "clauses_base": 66162181,
+    "clauses_d4": 66162189,
+    "cnf_build_sec": 1549.702,
+    "top_k_percent": 25.0,
+    "method_tag": "ranker_v2_k25"
+  },
+  "ranker_v2_k50": {
+    "placements": 7464,
+    "vars": 14917,
+    "clauses_base": 66615510,
+    "clauses_d4": 66615518,
+    "cnf_build_sec": 2026.374,
+    "top_k_percent": 50.0,
+    "method_tag": "ranker_v2_k50"
+  },
+  "ranker_v2_k100": {
+    "placements": 7464,
+    "vars": 14917,
+    "clauses_base": 67021163,
+    "clauses_d4": 67021171,
+    "cnf_build_sec": 2765.533,
+    "top_k_percent": 100.0,
+    "method_tag": "ranker_v2_k100"
+  }
+}

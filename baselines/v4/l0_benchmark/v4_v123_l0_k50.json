@@ -1,0 +1,34 @@
+{
+  "puzzle": "v4",
+  "model": "../baselines/learned_shape/ranker_train_v1_v2_v3.joblib",
+  "learned_tag": "learned_l0_k50_v123",
+  "top_k_percent": 50.0,
+  "cascade_l0_frac": 0.4,
+  "run_at": "2026-06-18T15:08:31.663104+08:00",
+  "cnf": {
+    "learned_l0_k50_v123": {
+      "tag": "learned_l0_k50_v123",
+      "build_method": "learned_shape",
+      "placements": 6852,
+      "vars": 13693,
+      "clauses_base": 55745945,
+      "clauses_d4": 55745945,
+      "cnf_build_sec": 1233.279,
+      "cnf_write_base_sec": 18.518,
+      "cnf_write_d4_sec": 0.0,
+      "cnf_total_sec": 1252.536,
+      "env": {
+        "DEAD_POCKET_FEATURES": "v2",
+        "LEARNED_SHAPE_MODEL": "../baselines/learned_shape/ranker_train_v1_v2_v3.joblib",
+        "LEARNED_SHAPE_TOP_K": "50.0",
+        "LEARNED_SHAPE_CASCADE_L0": "0.4"
+      },
+      "reused": false
+    }
+  },
+  "preprocess_from_cnf": {
+    "learned_tag": "learned_l0_k50_v123",
+    "learned_cnf_build_sec": 1233.279,
+    "learned_clauses_base": 55745945
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "puzzle": "v6",
+  "run_at": "2026-06-18T09:46:35.858270+08:00",
+  "finished_at": "2026-06-18T10:26:13.146353+08:00",
+  "order": [
+    "baseline",
+    "shape",
+    "learned_shape"
+  ],
+  "learned_model": "baselines/learned_shape/ranker_train_v1_v2_v3_v4_v5.joblib",
+  "learned_top_k": 25.0,
+  "cascade_l0_frac": 0.4,
+  "methods": [
+    {
+      "method": "baseline",
+      "cnf_build_sec": 31.681,
+      "cnf_write_sec": 12.65,
+      "cnf_total_sec": 44.331,
+      "vars": 14853,
+      "clauses": 65393099,
+      "placements": 7432,
+      "cnf_path": "baselines/v6/cnf_build_fair/baseline_fair.cnf"
+    },
+    {
+      "method": "shape",
+      "cnf_build_sec": 1314.733,
+      "cnf_write_sec": 20.368,
+      "cnf_total_sec": 1335.101,
+      "vars": 14853,
+      "clauses": 67500467,
+      "placements": 7432,
+      "cnf_path": "baselines/v6/cnf_build_fair/shape_fair.cnf"
+    },
+    {
+      "method": "learned_shape",
+      "cnf_build_sec": 972.211,
+      "cnf_write_sec": 19.077,
+      "cnf_total_sec": 991.288,
+      "vars": 14853,
+      "clauses": 66087849,
+      "placements": 7432,
+      "cnf_path": "baselines/v6/cnf_build_fair/learned_shape_fair.cnf"
+    }
+  ],
+  "historical_note": "break-even: baseline 31.5s, learned 938.3s, shape 1232.5s (build only); l0 manifest: baseline 42.1s, learned 950.6s, shape 2061.4s."
+}

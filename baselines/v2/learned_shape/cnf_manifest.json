@@ -1,0 +1,47 @@
+{
+  "learned_shape_k50": {
+    "placements": 6120,
+    "vars": 12229,
+    "clauses_base": 45672406,
+    "clauses_d4": 45672406,
+    "cnf_build_sec": 764.305,
+    "top_k_percent": 50.0,
+    "method_tag": "learned_shape_k50"
+  },
+  "learned_shape_k100": {
+    "placements": 6120,
+    "vars": 12229,
+    "clauses_base": 45674811,
+    "clauses_d4": 45674811,
+    "cnf_build_sec": 1315.214,
+    "top_k_percent": 100.0,
+    "method_tag": "learned_shape_k100"
+  },
+  "ranker_v1_k25": {
+    "placements": 6120,
+    "vars": 12229,
+    "clauses_base": 44764868,
+    "clauses_d4": 44764868,
+    "cnf_build_sec": 1093.563,
+    "top_k_percent": 25.0,
+    "method_tag": "ranker_v1_k25"
+  },
+  "ranker_v1_k50": {
+    "placements": 6120,
+    "vars": 12229,
+    "clauses_base": 45168802,
+    "clauses_d4": 45168802,
+    "cnf_build_sec": 1273.468,
+    "top_k_percent": 50.0,
+    "method_tag": "ranker_v1_k50"
+  },
+  "ranker_v1_k100": {
+    "placements": 6120,
+    "vars": 12229,
+    "clauses_base": 45674811,
+    "clauses_d4": 45674811,
+    "cnf_build_sec": 1802.843,
+    "top_k_percent": 100.0,
+    "method_tag": "ranker_v1_k100"
+  }
+}
