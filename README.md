@@ -86,8 +86,8 @@ flowchart LR
 [`requirements.txt`](requirements.txt) 中的 ML 套件。
 
 ```bash
-git clone https://github.com/Michaelwu128/new_puzzle_2026.git
-cd new_puzzle_2026
+git clone https://github.com/Michaelwu128/learned-dead-pocket-sat.git
+cd learned-dead-pocket-sat
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -119,7 +119,7 @@ ML 模型檔屬大型生成物，不直接納入 Git；可依
 ## 目錄結構（精簡）
 
 ```
-new_puzzle_2026/
+learned-dead-pocket-sat/
 ├── README.md                 ← 本文件
 ├── EXPERIMENT_RESULTS.md     ← Geometric pruning 實驗總整理
 ├── encoding/                 ← CNF 生成、剪枝、benchmark 腳本

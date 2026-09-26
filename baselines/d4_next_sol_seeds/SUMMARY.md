@@ -1,6 +1,6 @@
 # D4 blocking · 10 seed 下一解實驗總整理
 
-> **專案**：`new_puzzle_2026`  
+> **專案**：`learned-dead-pocket-sat`  
 > **腳本**：`encoding/run_d4_next_sol_seeds.py`  
 > **求解器**：Kissat（使用 `--kissat`、`KISSAT` 環境變數或 `PATH` 指定）
 > **最後更新**：2026-06-07  

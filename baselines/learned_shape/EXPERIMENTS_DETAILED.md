@@ -1,6 +1,6 @@
 # Learned Dead-Pocket 實驗詳解
 
-> **專案**：`new_puzzle_2026`  
+> **專案**：`learned-dead-pocket-sat`  
 > **方法**：AI 預篩 placement pair → formal `has_dead_pocket` oracle 閘門 → 僅確認後加子句  
 > **簡版報告**：[REPORT.md](./REPORT.md)  
 > **最後更新**：2026-06-18（含 v123 無 L0 @25%/@50% CNF、v6 break-even k=100）  

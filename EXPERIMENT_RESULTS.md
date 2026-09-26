@@ -476,14 +476,14 @@ v1/v2 的拼圖形狀與我提供的已知解整理於
 | 專案 | 關係 |
 |------|------|
 | [`untouchable11-sat`](https://github.com/Michaelwu128/untouchable11-sat) | 我上學期研究的 11 塊 **不同** 拼圖；公開版包含 Model C 與其他棋盤尺寸的 benchmark |
-| `new_puzzle_2026/` | **本文件**所整理的兩個新手繪 12×12 拼圖 |
+| `learned-dead-pocket-sat/` | **本文件**所整理的兩個新手繪 12×12 拼圖 |
 
 ---
 
 ## 9. 重現指令速查
 
 ```bash
-cd new_puzzle_2026/encoding
+cd learned-dead-pocket-sat/encoding
 
 # v1 / v2 公平枚舉（四方法）
 python3 run_enum_benchmark.py --puzzle v1 --count 5

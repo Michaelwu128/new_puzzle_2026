@@ -1,6 +1,6 @@
 # Learned Dead-Pocket（Formal + AI）實驗報告
 
-> **專案**：`new_puzzle_2026`  
+> **專案**：`learned-dead-pocket-sat`  
 > **方法**：AI 預篩 placement pair → 僅對高分候選呼叫 formal `has_dead_pocket` oracle → 確認後才加 `¬pi∨¬pj`  
 > **Soundness**：AI 假陽性由 oracle 擋下；假陰性只漏剪枝，**never UNSOUND**  
 > **詳解**：[EXPERIMENTS_DETAILED.md](./EXPERIMENTS_DETAILED.md)  

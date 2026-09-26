@@ -1,7 +1,7 @@
 # 實驗產物
 
 這個 repository 保留程式、結果摘要、精簡 JSON 與圖表。體積較大、可由程式重建的原始產物另存於 GitHub Release
-[`research-artifacts-v1`](https://github.com/Michaelwu128/new_puzzle_2026/releases/tag/research-artifacts-v1)，避免一般 clone 下載大量中間資料。
+[`research-artifacts-v1`](https://github.com/Michaelwu128/learned-dead-pocket-sat/releases/tag/research-artifacts-v1)，避免一般 clone 下載大量中間資料。
 
 ## Release 檔案
 
